@@ -1,0 +1,40 @@
+
+  #identified {
+
+    width: 100%;
+    height: 60px;
+    color: rgb(255, 255, 255);
+    background: linear-gradient(50deg ,rgb(143, 143, 143) ,black,rgb(150, 144, 144));
+    background-size: 400% 400%;
+    
+    animation: cambiar 10s ease-in-out infinite;
+  }
+  
+   
+    
+  }
+  #identified0 {
+
+    width: 100%;
+    height: 25px;
+    color: rgb(255, 255, 255);
+    background: linear-gradient(50deg ,rgb(143, 143, 143) ,black,rgb(150, 144, 144));
+    background-size: 400% 400%;
+    border-radius: ;
+    
+    animation: cambiar 10s ease-in-out infinite;
+  }
+
+  @keyframes cambiar {
+    0% {
+      background-position: 0 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
+
+    100% {
+      background-position: 0 50%;
+    }
+  }
