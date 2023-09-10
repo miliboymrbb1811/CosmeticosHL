@@ -56,7 +56,7 @@
             <div class="clearfix"></div>
             <div>
               <h1><i class="fa fa-globe"></i> Sistema de gestión de ventas</h1>
-              <p>©2022 todos los derechas reservados. Gentelella By SISmrbb.</p>
+              <p>©2023 todos los derechas reservados. By SISMilivoy.</p>
             </div>
           </div>
           <?php
