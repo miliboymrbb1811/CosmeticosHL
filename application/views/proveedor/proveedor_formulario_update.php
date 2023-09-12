@@ -9,63 +9,68 @@
                 <div class="x_panel bg-dark text-white ">
                     <!-- Inicio Div x_panel -->
                     <div class="x_title">
-                        <h2>Actualizar datos del cliente.</h2>
+                        <h2> <span class="glyphicon glyphicon-pencil   "></span>  Actualizar datos del cliente.</h2>
                         <div class="clearfix">
                         </div>
                     </div>
                     <div class="x_content">
                         <!-- Inicio Div x_content -->
                         <?php
-                        echo form_open_multipart('cliente/index');
+                        echo form_open_multipart('proveedor/index');
                         ?>
                         <button type="submit" name="buttonInhabilitados" class="btn btn-outline-success">
-                            <i class="fa fa-arrow-circle-left"></i> Volver a clientes
+                            <i class="fa fa-arrow-circle-left"></i> Volver a proveedor
                         </button>
                         <?php
                         echo form_close();
                         ?>
                         <br>
                         <p class="text-muted font-13 m-b-30">
-                            Usted está por actualizar los datos de un cliente, por favor llene el siguiente campo:
+                            Usted está por actualizar los datos de un proveedor, por favor llene el siguiente campo:
                         </p>
                         <?php
-                        foreach ($infocliente->result() as $row) {
-                            echo form_open_multipart('cliente/modificarbd');
+                        foreach ($infoproveedor->result() as $row) {
+                            echo form_open_multipart('proveedor/modificarbd');
                         ?>
-                            <input type="hidden" name="idcliente" value="<?php echo $row->idCliente; ?>">
-                            <input type="hidden" name="idpersona" value="<?php echo $row->idPersona;?>">
+                            <input type="hidden" name="idproveedor" value="<?php echo $row->idProveedor; ?>">
+                       
                             <br>
                             <div class="item form-group has-feedback">
-                                <label class="col-form-label col-md-1 label-align" for="nombre">nombre:</label>
+                                <label class="col-form-label col-md-1 label-align" for="razonsocial">Razon Social:</label>
                                 <div class="col-md-3">
-                                    <input type="text" name="nombre" value="<?php echo $row->nombre; ?>" class="form-control has-feedback-left" required>
+                                    <input type="text" name="razonsocial" value="<?php echo $row->razonSocial; ?>" class="form-control has-feedback-left" required>
                                     <span class="fa fa-male form-control-feedback left" aria-hidden="true"></span>
                                 </div>
-                                <label class="col-form-label col-md-1 label-align" for="primerapellido">Primer Ap:</label>
+                                <label class="col-form-label col-md-1 label-align" for="departamento">Departamento:</label>
                                 <div class="col-md-3">
-                                    <input type="text" name="primerapellido" value="<?php echo $row->primerApellido; ?>" class="form-control has-feedback-left" required>
-                                    <span class="fa fa-male form-control-feedback left" aria-hidden="true"></span>
+                                    <input type="text" name="departamento" value="<?php echo $row->Departamento; ?>" class="form-control has-feedback-left" required>
+                                    <span class="fa fa-paper-plane-o form-control-feedback left" aria-hidden="true"></span>
                                 </div>
-                                <label class="col-form-label col-md-1 label-align" for="segundoapellido">Segundo Ap:</label>
+                                <label class="col-form-label col-md-1 label-align" for="ubicasion">ubicasion:</label>
                                 <div class="col-md-3">
-                                    <input type="text" name="segundoapellido" value="<?php echo $row->segundoApellido; ?>" class="form-control has-feedback-left">
-                                    <span class="fa fa-male form-control-feedback left" aria-hidden="true"></span>
+                                    <input type="text" name="ubicasion" value="<?php echo $row->direccion; ?>" class="form-control has-feedback-left">
+                                    <span class="fa fa-thumb-tack form-control-feedback left" aria-hidden="true"></span>
                                 </div>
                             </div>
                             <div class="item form-group has-feedback">
-                                <label class="col-form-label col-md-1 label-align" for="numerocelular">Nro. Celular:</label>
+                                <label class="col-form-label col-md-1 label-align" for="numerocuenta">N° de cuenta bancaria:</label>
                                 <div class="col-md-3">
-                                    <input type="text" name="numerocelular" value="<?php echo $row->numeroCelular; ?>" class="form-control has-feedback-left">
+                                    <input type="text" name="numerocuenta" value="<?php echo $row->numeroCuenta; ?>" class="form-control has-feedback-left">
+                                    <span class="fa fa-credit-card form-control-feedback left" aria-hidden="true"></span>
+                                </div>
+                                <label class="col-form-label col-md-1 label-align" for="celular">N° de celular:</label>
+                                <div class="col-md-3">
+                                    <input type="text" name="celular" value="<?php echo $row->celular; ?>" class="form-control has-feedback-left">
                                     <span class="fa fa-mobile-phone form-control-feedback left" aria-hidden="true"></span>
                                 </div>
-                                <label class="col-form-label col-md-1 label-align" for="numeroci">Nro. Carnet:</label>
+                                <label class="col-form-label col-md-1 label-align" for="descripcion">Descripcion:</label>
                                 <div class="col-md-3">
-                                    <input type="text" name="numeroci" value="<?php echo $row->numeroCI; ?>" class="form-control has-feedback-left">
-                                    <span class="fa fa-list-alt form-control-feedback left" aria-hidden="true"></span>
+                                    <input type="text" name="descripcion" value="<?php echo $row->descripcion; ?>" class="form-control has-feedback-left">
+                                    <span class="fa fa-tag form-control-feedback left" aria-hidden="true"></span>
                                 </div>
                             </div>
                             <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modalConfirmacion">
-                                <i class="fa fa-edit"></i> Modificar
+                                <i class=""><span class="glyphicon glyphicon-floppy-open"></span></i> Guardar
                             </button>
 
                     </div><!-- Fin Div x_content -->

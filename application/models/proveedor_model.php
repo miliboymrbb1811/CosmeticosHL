@@ -6,40 +6,33 @@ class Proveedor_model extends CI_Model {
 
 	public function listaproveedor()//select
 	{
-        $this->db->select('idProveedor, Departamenteo, numeroCuenta, direccion, descripcion, razonSociol'); //select *
+        $this->db->select('idProveedor, Departamento, numeroCuenta, direccion, descripcion,celular, razonSocial'); //select *
         $this->db->FROM('proveedores'); //tabla productos
         $this->db->where('proveedores.estado','1'); //condición where estado = 1
         //si se gusta añadir una especie de AND de SQL se puede repetir nuevamente la línea previa a este comentario. ($this->db->where('estado','1');)
         return $this->db->get(); //devolucion del resultado de la consulta
 	}
 
-    public function agregarcliente($data)//create
+    public function agregarproveedor($data)//create
     {
-        $this->db->insert('cliente',$data); //tabla
+        $this->db->insert('proveedores',$data); //tabla
     }
 
-    public function eliminarempleado($idcliente)//delete
+    public function eliminarproveedor($idproveedor)//delete
     {
-        $this->db->where('idcliente',$idcliente); //condición where id
-        $this->db->delete('cliente'); //tabla
+        $this->db->where('idproveedor',$idproveedor); //condición where id
+        $this->db->delete('proveedores'); //tabla
     }
 
-    public function recuperarempleado($idcliente)//get
+    public function recuperarproveedor($idroveedor)//get
     {
-        $this->db->select('cliente.idCliente,cliente.idPersona, persona.nombre, persona.primerApellido, persona.segundoApellido, persona.numeroCelular, persona.numeroCI, cliente.estado, persona.fechaRegistro, persona.fechaActualizacion'); //select *
-        $this->db->FROM('cliente'); //tabla
-        $this->db->where('cliente.idCliente',$idcliente); 
-        $this->db->JOIN('persona ','persona.idpersona = cliente.idpersona');
-
-       //condición where id
+        $this->db->select('idProveedor, Departamento, numeroCuenta, direccion, descripcion,celular, razonSocial'); //select *
+        $this->db->FROM('proveedores'); //tabla productos
+        $this->db->where('proveedores.idProveedor',$idroveedor); //condición where estado = 1
+        //si se gusta añadir una especie de AND de SQL se puede repetir nuevamente la línea previa a este comentario. ($this->db->where('estado','1');)
         return $this->db->get(); //devolucion del resultado de la consulta
     }
-    public functiON modificarPersona($idcliente,$data)//update
-    {     
-        $this->db->where('idPersona',$idcliente);
-        $this->db->update('persona',$data);
 
-    }
 
     public function modificarproveedor($idproveedor,$data)//update
     {
@@ -47,38 +40,14 @@ class Proveedor_model extends CI_Model {
         $this->db->update('proveedores',$data);
     }
 
-    public function listaempleadodeshabilitados()//select
+    public function listaproveedordeshabilitados()//select
     {
-        $this->db->select('idCliente, persona.nombre, persona.primerApellido, persona.segundoApellido, numeroCelular, numeroCI, cliente.estado, persona.fechaRegistro, persona.fechaActualizacion'); //select *
-        $this->db->FROM('cliente'); //tabla productos
-        $this->db->where('cliente.estado','0'); //condición where estado = 1
-        $this->db->JOIN('persona', 'persona.idpersona = cliente.idpersona');
+        $this->db->select('idProveedor, Departamento, numeroCuenta, direccion, descripcion,celular, razonSocial'); //select *
+        $this->db->FROM('proveedores'); //tabla productos
+        $this->db->where('proveedores.estado','0'); //condición where estado = 1
         //si se gusta añadir una especie de AND de SQL se puede repetir nuevamente la línea previa a este comentario. ($this->db->where('estado','1');)
         return $this->db->get(); //devolucion del resultado de la consulta
     }
-
-
-    public function getClients($postData){
-        // $postData['search'] = 7;
-        $response2 = array();
-        if(isset($postData['search']) ){
-          // Select record
-          $this->db->select('*');
-          $this->db->FROM('bddMilivoy.persona'); //tabla productos
-          $this->db->JOIN('bddMilivoy.cliente ', 'cliente.idPersona = persona.idPersona');
-          $this->db->where("persona.numeroCI like '%".$postData['search']."%' ");
-          $this->db->where('cliente.estado','1'); //condición where estado = 1
-        
-          $records = $this->db->get()->result();
-   
-          foreach($records as $row ){
-             $response2[] = array("value"=>$row->numeroCI,"idPersona"=>$row->idCliente,"primerApellido"=>$row->primerApellido
-             ,"segundoApellido"=>$row->segundoApellido,"nombre"=>$row->nombre);
-            }
-   
-        }
-        return $response2;
-     }
 
 
 }

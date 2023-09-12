@@ -5,7 +5,7 @@
                 <div class="x_panel"><!-- Inicio Div x_panel -->
                     <div class="x_title">
                         <tiTLe><i class="fa fa-male"></i> Proveedores.</tiTLe>
-                        <h2><i class="fa fa-male"></i> Proveedores </h2>
+                        <h2><i class="fa fa-paste"></i> Proveedores</h2>
                         <ul class="nav navbar-right panel_toolbox">
                             <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                             </li>
@@ -33,7 +33,7 @@
                                         ?>-->
 <!-----------------------------------------------fin----------------------------------------------------------------> 
                                         <?php 
-                                            echo form_open_multipart('cliente/agregar');
+                                            echo form_open_multipart('proveedor/agregar');
                                         ?>
                                         <button type="submit"  class="btn btn-round  btn-success">
                                             <i class="fa fa-plus-circle"></i> Agregar Proveedor
@@ -53,6 +53,7 @@
                                                 <th>Numero</th>
                                                 <th>Nombre</th>
                                                 <th>Departamento</th>
+                                                <th>Celular</th>
                                                 <th>N° de cuenta</th>
                                                 <th>Direccion</th>
                                                 <th>Descripcion</th>
@@ -67,8 +68,9 @@
                                         ?>
                                             <tr>
                                                 <td><?php echo $row->idProveedor; ?></td>
-                                                <td><?php echo $row->razonSociol; ?></td>
-                                                <td><?php echo $row->Departamenteo; ?></td>
+                                                <td><?php echo $row->razonSocial; ?></td>
+                                                <td><?php echo $row->Departamento; ?></td>
+                                                <td><?php echo $row->celular; ?></td>
                                                 <td><?php echo $row->numeroCuenta; ?></td>
                                                 <td><?php echo $row->direccion; ?></td>
                                                 <td><?php echo $row->descripcion;?></td>

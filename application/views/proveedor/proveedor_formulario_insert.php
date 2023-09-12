@@ -9,65 +9,71 @@
                 <div class="x_panel bg-dark text-white">
                     <!-- Inicio Div x_panel -->
                     <div class="x_title">
-                        <h2>Insertar nuevo Proveedor.</h2>
+                        <h2>Agredar nuevo Proveedor.</h2>
                         <div class="clearfix">
                         </div>
                     </div>
                     <div class="x_content">
                         <!-- Inicio Div x_content -->
                         <?php
-                        echo form_open_multipart('cliente/index');
+                        echo form_open_multipart('proveedor/index');
                         ?>
                         <button type="submit" name="buttonInhabilitados" class="btn btn-outline-success">
-                            <i class="fa fa-arrow-circle-left"></i> Volver a clientes
+                            <i class="fa fa-arrow-circle-left"></i> Volver a Proveedores
                         </button>
                         <?php
                         echo form_close();
                         ?>
                         <br>
                         <p class="text-muted font-13 m-b-30">
-                            Usted va a insertar un nuevo cliente, por favor llene el siguiente campo:
+                            Usted agregara a un nuevo proveedor, por favor llene los siguiente campo:
                         </p>
                         <?php
-                        echo form_open_multipart('cliente/agregarbd');
+                        echo form_open_multipart('proveedor/agregarbd');
                         ?>
                         <div class="item form-group has-feedback">
 
-                            <label class="col-form-label col-md-1 label-align" for="nombre">nombre:</label>
+                            <label class="col-form-label col-md-1 label-align" for="razonsocial">Razon Social:</label>
                             <div class="col-md-3">
-                                <input type="text" name="nombre" class="form-control has-feedback-left" value="<?php echo set_value('nombre'); ?>">
+                                <input type="text" name="razonsocial" class="form-control has-feedback-left" value="<?php echo set_value('nombre'); ?>">
                                 <span class="fa fa-male form-control-feedback left" aria-hidden="true"></span>
-                                <?php echo form_error('nombre'); ?>
+                                <?php echo form_error('razonsocial'); ?>
                             </div>
 
-                            <label class="col-form-label col-md-1 label-align" for="primerapellido">Primer Apellido:</label>
+                            <label class="col-form-label col-md-1 label-align" for="departamento">Departamento:</label>
                             <div class="col-md-3">
-                                <input type="text" name="primerapellido" class="form-control has-feedback-left" value="<?php echo set_value('primerapellido'); ?>">
+                                <input type="text" name="departamento" class="form-control has-feedback-left" value="<?php echo set_value('primerapellido'); ?>">
                                 <span class="fa fa-male form-control-feedback left" aria-hidden="true"></span>
-                                <?php echo form_error('primerapellido'); ?>
+                                <?php echo form_error('departamento'); ?>
                             </div>
 
-                            <label class="col-form-label col-md-1 label-align" for="segundoapellido">Segundo Apellido:</label>
+                            <label class="col-form-label col-md-1 label-align" for="ubicasion">Ubicasion:</label>
                             <div class="col-md-3">
-                                <input type="text" name="segundoapellido" class="form-control has-feedback-left" value="<?php echo set_value('segundoapellido'); ?>">
+                                <input type="text" name="ubicasion" class="form-control has-feedback-left" value="<?php echo set_value('segundoapellido'); ?>">
                                 <span class="fa fa-male form-control-feedback left" aria-hidden="true"></span>
-                                <?php echo form_error('segundoapellido'); ?>
+                                <?php echo form_error('ubicasion'); ?>
                             </div>
 
                         </div>
 
                         <div class="item form-group has-feedback">
-                            <label class="col-form-label col-md-1 label-align" for="numerocelular">Nro. Celular:</label>
+                            <label class="col-form-label col-md-1 label-align" for="numerocuenta">N° de cuenta bancaria:</label>
                             <div class="col-md-3">
-                                <input type="text" name="numerocelular" class="form-control has-feedback-left" value="<?php echo set_value('numerocelular'); ?>">
+                                <input type="text" name="numerocuenta" class="form-control has-feedback-left" value="<?php echo set_value('numerocelular'); ?>">
                                 <span class="fa fa-mobile-phone form-control-feedback left" aria-hidden="true"></span>
-                                <?php echo form_error('numerocelular'); ?>
+                                <?php echo form_error('numerocuenta'); ?>
                             </div>
-                            <label class="col-form-label col-md-1 label-align" for="numeroci">Nro. Carnet:</label>
+                            <label class="col-form-label col-md-1 label-align" for="celular">N° de celular:</label>
                             <div class="col-md-3">
-                                <input type="text" name="numeroci" class="form-control has-feedback-left" value="<?php echo set_value('numeroci'); ?>">
+                                <input type="text" name="celular" class="form-control has-feedback-left" value="<?php echo set_value('numeroci'); ?>">
                                 <span class="fa fa-list-alt form-control-feedback left" aria-hidden="true"></span>
-                                <?php echo form_error('numeroci'); ?>
+                                <?php echo form_error('celular'); ?>
+                            </div>
+                            <label class="col-form-label col-md-1 label-align" for="descripcion">Descripcion:</label>
+                            <div class="col-md-3">
+                                <input type="text" name="descripcion" class="form-control has-feedback-left" value="<?php echo set_value('numeroci'); ?>">
+                                <span class="fa fa-list-alt form-control-feedback left" aria-hidden="true"></span>
+                                <?php echo form_error('descripcion'); ?>
                             </div>
                         </div>
                         <button type="submit" class="btn btn-success">

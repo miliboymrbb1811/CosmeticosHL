@@ -37,8 +37,30 @@
             ?>
 
               <li>
-                <a>
+              <A>
+                  <i class="fa fa-truck"></i> Proveedores
+                  <span class="fa fa-chevron-down"></span>
+                </a>
+                <ul class="nav child_menu">
+                  <li>
+                    <?php echo form_open_multipart('Proveedor/index'); ?>
+                    <button type="submit" class="col-md-11 btn btn-dark" style="background-color: transparent; border: none;">
+                    Proveedores
+                    </button>
+                    <?php echo form_close(); ?>
+                  </li>
+                  <li>
+                    <?php echo form_open_multipart('Proveedor/deshabilitados');  ?>
+                    <button type="submit" class="col-md-11 btn btn-dark">
+                    <span class="glyphicon glyphicon-eye-close"></span>   Proveedores Deshabilitados
+                    </button>
+                    <?php echo form_close(); ?>
+                  </li>
+                </ul>
+              </li>
+              <li>
 
+               <A>
                   <i class="fa fa-male"></i> Empleados
                   <span class="fa fa-chevron-down"></span>
                 </a>
